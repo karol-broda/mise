@@ -59,7 +59,6 @@ const Providers = providers()
   .add(AuthProvider, { user })
   .add(ToastProvider);
 
-// use directly - no .build() needed
 <Providers>
   <App />
 </Providers>
