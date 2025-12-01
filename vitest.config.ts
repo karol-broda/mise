@@ -8,5 +8,14 @@ export default defineConfig({
     environment: 'happy-dom',
     globals: true,
     setupFiles: './tests/setup.ts',
+    typecheck: {
+      enabled: true,
+      include: ['tests/**/*.test-d.tsx'],
+    },
+    onConsoleLog(log) {
+      if (log.includes('ThrowingProvider error') || log.includes('The above error occurred')) {
+        return false
+      }
+    },
   },
 })

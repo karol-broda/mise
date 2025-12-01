@@ -69,14 +69,18 @@ export function providers(): ProviderComponent {
   Provider.wrap = function <P extends object>(
     Component: ComponentType<P>
   ): FunctionComponent<P> {
-    return function WrappedComponent(props: P): ReactNode {
+    const WrappedComponent = (props: P): ReactNode => {
       return (
         <Provider>
           <Component {...props} />
         </Provider>
       )
     }
+    WrappedComponent.displayName = `MiseWrapped(${Component.displayName || Component.name || 'Component'})`
+    return WrappedComponent
   }
+
+  Provider.displayName = 'MiseProviders'
 
   return Provider as ProviderComponent
 }
