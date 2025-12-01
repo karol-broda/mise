@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@karol-broda/mise",
+  "version": "0.1.0",
+  "description": "compose react context providers with ease. mise en place for your react app.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "context",
+    "provider",
+    "compose",
+    "builder"
+  ],
+  "homepage": "https://github.com/karol-broda/mise#readme",
+  "bugs": {
+    "url": "https://github.com/karol-broda/mise/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karol-broda/mise.git"
+  },
+  "author": "karol-broda",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "format": "oxfmt --check",
+    "format:write": "oxfmt",
+    "release": "bumpp && bun publish",
+    "prepublishOnly": "bun run build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@tsconfig/strictest": "^2.0.8",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "bumpp": "^10.3.1",
+    "happy-dom": "^20.0.10",
+    "oxfmt": "^0.15.0",
+    "tsdown": "^0.16.4",
+    "typescript": "^5.9.3",
+    "vite": "npm:rolldown-vite@^7.2.5",
+    "vitest": "^4.0.9"
+  }
+}
